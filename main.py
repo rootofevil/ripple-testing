@@ -1,5 +1,6 @@
 import requests
 import json
+import pprint
 
 url = "http://10.1.11.102:8080/"
 headers = {'content-type': 'application/json'}
@@ -13,7 +14,7 @@ def server_info():
         ]
     }
     response = requests.post(url, data=json.dumps(payload), headers=headers)
-    print response.json()
+    pprint.pprint(response.json())
     #return response
 def account_info():
     payload = {
@@ -28,7 +29,7 @@ def account_info():
         ]
     }
     response = requests.post(url, data=json.dumps(payload), headers=headers)
-    print response.json()
+    pprint.pprint(response.json())
     
 def main():
     server_info()
